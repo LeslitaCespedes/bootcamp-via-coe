@@ -1,6 +1,5 @@
 /// <reference types="cypress"/>
 const formacaoPage = require('../../support/Formacao/formacao-pages')
-const faker = require('faker-br')
 
 describe('Funcionalidade Adicionar Formacao Academica', () => {
     beforeEach(() => {
