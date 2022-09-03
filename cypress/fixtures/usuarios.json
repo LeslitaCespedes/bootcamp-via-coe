@@ -1,0 +1,15 @@
+[
+    {
+        "email": "leslita@teste.com",
+        "senha": "Bootcamp"
+    },
+    {
+        "email": "les@teste.com",
+        "senha": "Bootcamp"
+    },
+    {
+        "email": "les@teste.com",
+        "senha": "Bootcamp",
+        "perfil": "admin"
+    }
+]
