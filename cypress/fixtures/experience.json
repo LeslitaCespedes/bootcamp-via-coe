@@ -1,0 +1,30 @@
+[ 
+    {
+        "title": "QA",
+        "company": "Novotel",
+        "location": "Rio de Janeiro",
+        "from": "2022-09-09",
+        "to": "2023-09-09",
+        "current": false,
+        "description": "QA"
+    },
+    {
+      "title": "DEV",
+      "company": "Novotel",
+      "location": "SP",
+      "from": "2021-09-09",
+      "to": "2022-09-09",
+      "current": false,
+      "description": "DEV junior"
+    },
+    {
+      "title": "QA Junior",
+      "company": "VIA",
+      "location": "SP",
+      "from": "2021-09-09",
+      "to": "2022-12-10",
+      "current": false,
+      "description": "teste de software jr"
+  }
+]
+

@@ -25,6 +25,9 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 /// <reference types="Cypress" />
+import auth from '../fixtures/auth.json'
+import infoExperience from '../fixtures/experience.json'
+import infoAcademica from '../fixtures/formacaoAcademica.json'
 
 Cypress.Commands.add('navigate', (route) => {
     cy.intercept(route).as('loadpage')
@@ -74,3 +77,67 @@ Cypress.Commands.add("login", (email, password) => {
     cy.get('[data-test="profile-medium"] > .MuiInputBase-root > .MuiInputBase-input').type(medium)
     
  })
+
+
+// APIs
+
+ Cypress.Commands.add("tokenJwt", () => {
+   cy.request({
+      method: 'POST',
+      url: 'api/auth',
+      body: auth
+   }).then((response) =>{
+      return response.body.jwt
+   })    
+})
+
+Cypress.Commands.add("criarPostagem", (token,value) => {
+   cy.request({
+      method: 'POST',
+      url: 'api/posts',
+      headers: {
+         Cookie: token
+      },
+      body: {
+         text: value
+      }
+  })
+   
+})
+
+Cypress.Commands.add("idUsuario", (token) => {
+   cy.request({
+      method: 'GET',
+      url: '/api/auth',
+      headers: {
+         Cookie: token
+      }
+  })
+   
+})
+
+
+Cypress.Commands.add("idExpProfissional", (token) => {
+   
+   cy.request({    
+         method: "PUT",
+         url: '/api/profile/experience',
+         headers:{
+            Cookie: token
+         },
+         body: infoExperience[0]
+   })
+   
+})
+
+Cypress.Commands.add("idFormacaoAcademica", (token) => {
+   cy.request({
+      method: "PUT",
+      url: '/api/profile/education',
+      headers:{
+          Cookie: token
+      },
+      body: infoAcademica[1]    
+   })
+   
+})

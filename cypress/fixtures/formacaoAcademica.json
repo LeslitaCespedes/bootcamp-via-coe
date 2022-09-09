@@ -1,0 +1,20 @@
+[
+  {
+    "school": "USP",
+    "degree": "engenheiro",
+    "fieldofstudy": "Sistemas de Informação",
+    "from": "2022-09-09",
+    "to": "2022-09-09",
+    "current": false,
+    "description": "Graduação"
+  },
+  {
+    "school": "UNIP",
+    "degree": "licenciatura",
+    "fieldofstudy": "Ciencias da Computacão",
+    "from": "2010-09-09",
+    "to": "2017-09-09",
+    "current": false,
+    "description": "Graduação"
+  }
+]
