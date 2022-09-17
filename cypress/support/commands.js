@@ -41,6 +41,18 @@ Cypress.Commands.add("login", (email, password) => {
     cy.get('[data-test="login-password"] > .MuiInputBase-root > .MuiInputBase-input').type(password)
     cy.get('[data-test="login-submit"]').click()
  })
+
+import user from '../fixtures/usuarios.json'
+Cypress.Commands.add("loginApp", (email, password) => { 
+    cy.request({
+      method: 'POST',
+      url: '/api/auth',
+      body: {
+         "email": user[0].email,
+         "password": user[0].senha
+      }
+    })
+})
  
  // cadastrar usuario
  Cypress.Commands.add("cadastrar", (nome,email, senha) => { 
@@ -141,3 +153,4 @@ Cypress.Commands.add("idFormacaoAcademica", (token) => {
    })
    
 })
+

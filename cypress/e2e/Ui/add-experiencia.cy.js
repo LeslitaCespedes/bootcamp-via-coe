@@ -5,13 +5,19 @@ describe('Funcionalidade: Adicionar experiência', () => {
     
     beforeEach(() => {
         
-        cy.fixture("usuarios").then((usr) => {
+      /* cy.fixture("usuarios").then((usr) => {
             cy.login(usr[0].email, usr[0].senha)
             cy.title().should('eq', 'ConexaoQA')
-        })
+        })*/
+        cy.loginApp()
+        cy.visit('adicionar-experiencia')
         
     })
 
+    it.only('Acessar Experiencia', () =>{
+        cy.log(2+2)
+    })
+    
     it('Deve adicionar uma experiência com sucesso', () => {
         cy.visit('adicionar-experiencia')
         experienciaPage.addExperiencia('QA', 'Via', 'SP', '01/01/2020','01/08/2030', 'ViaHub é TOP' )
