@@ -4,7 +4,7 @@ class FormacaoPage{
     get #curso() { return  cy.get('[data-test="education-fieldOfStudy"]')}
     get #dataInicio() {return cy.get('#from') } 
     get #checkCursando() { return cy.get('[name="current"]')}
-    get #dataFim() { return cy.get('#to')}
+    get #dataFim() { return cy.get('[data-test="education-to"] > .MuiInputBase-root')}
     get #descricao() { return cy.get('[rows="1"]')}
     get #btnAdd() { return cy.get('[data-test="education-submit"]').click()}
 
