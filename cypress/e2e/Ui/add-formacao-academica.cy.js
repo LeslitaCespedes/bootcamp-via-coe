@@ -15,17 +15,10 @@ describe('Funcionalidade Adicionar Formacao Academica', () => {
         formacaoPage.addFormacao("UNICAMP)","engenheira de qualidade","QA","02/02/2015","10/12/2021","Quality Assurance, plano de testes e gestão de bugs")
         cy.get('[data-test="education-delete"]').should('be.visible')      
     });
-    it('Deve adicionar cursando uma formação academica  com sucesso', () => {      
-        
+    it('Deve adicionar cursando uma formação academica  com sucesso', () => {    
         cy.visit('/adicionar-formacao') 
         formacaoPage.addFormacaoCursando("EBAC","tecnico","QA","02/02/2016","10/12/2023","processos de automação de testes para aplicativos de web e mobile")
         cy.get('[data-test="education-delete"]').should('be.visible')
-    });
-    it('Opcão "Data ate" deve estar deshabilitada se a opçaõ "Cursando" e check', () => {  
-        
-        cy.visit('/adicionar-formacao')      
-        formacaoPage.addFormacaoCursando("EBAC","tecnico","QA","02/02/2015","10/12/2022","processos de automação de testes para aplicativos de web e mobile")
-        cy.get('#to').should('be.disabled')
     });
     it('Deve eliminar uma formação academica com sucesso', () => {
       cy.get('[data-test="education-delete"]').first().click()
